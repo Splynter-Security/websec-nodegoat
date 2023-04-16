@@ -11,7 +11,7 @@ const { db } = require("../config/config");
 
 const USERS_TO_INSERT = [
     {
-        "_id": 1,
+        "_id": 100,
         "userName": "admin",
         "firstName": "Node Goat",
         "lastName": "Admin",
@@ -19,7 +19,7 @@ const USERS_TO_INSERT = [
         //"password" : "$2a$10$8Zo/1e8KM8QzqOKqbDlYlONBOzukWXrM.IiyzqHRYDXqwB3gzDsba", // Admin_123
         "isAdmin": true
     }, {
-        "_id": 2,
+        "_id": 1,
         "userName": "user1",
         "firstName": "John",
         "lastName": "Doe",
@@ -27,16 +27,130 @@ const USERS_TO_INSERT = [
         "password": "User1_123"
         // "password" : "$2a$10$RNFhiNmt2TTpVO9cqZElb.LQM9e1mzDoggEHufLjAnAKImc6FNE86",// User1_123
     }, {
-        "_id": 3,
+        "_id": 2,
         "userName": "user2",
         "firstName": "Will",
         "lastName": "Smith",
         "benefitStartDate": "2025-11-30",
         "password": "User2_123"
         //"password" : "$2a$10$Tlx2cNv15M0Aia7wyItjsepeA8Y6PyBYaNdQqvpxkIUlcONf1ZHyq", // User2_123
-    }];
-
-const tryDropCollection = (db, name) => {
+    }, {
+        "_id": 3,
+        "userName": "user3",
+        "firstName": "Will",
+        "lastName": "Smith",
+        "benefitStartDate": "2025-11-30",
+        "password": "User3_123"
+        //"password" : "$2a$10$Tlx2cNv15M0Aia7wyItjsepeA8Y6PyBYaNdQqvpxkIUlcONf1ZHyq", // User2_123
+    }, {
+        "_id": 4,
+        "userName": "user4",
+        "firstName": "Student 4",
+        "lastName": "Smith",
+        "benefitStartDate": "2025-11-30",
+        "password": "User4_123"
+        //"password" : "$2a$10$Tlx2cNv15M0Aia7wyItjsepeA8Y6PyBYaNdQqvpxkIUlcONf1ZHyq", // User2_123
+    }, {
+        "_id": 5,
+        "userName": "user5",
+        "firstName": "Student 5",
+        "lastName": "Smith",
+        "benefitStartDate": "2025-11-30",
+        "password": "User5_123"
+        //"password" : "$2a$10$Tlx2cNv15M0Aia7wyItjsepeA8Y6PyBYaNdQqvpxkIUlcONf1ZHyq", // User2_123
+    }, {
+        "_id": 6,
+        "userName": "user6",
+        "firstName": "Student 6",
+        "lastName": "Smith",
+        "benefitStartDate": "2025-11-30",
+        "password": "User6_123"
+        //"password" : "$2a$10$Tlx2cNv15M0Aia7wyItjsepeA8Y6PyBYaNdQqvpxkIUlcONf1ZHyq", // User2_123
+    }, {
+        "_id": 7,
+        "userName": "user7",
+        "firstName": "Student 7",
+        "lastName": "Smith",
+        "benefitStartDate": "2025-11-30",
+        "password": "User7_123"
+        //"password" : "$2a$10$Tlx2cNv15M0Aia7wyItjsepeA8Y6PyBYaNdQqvpxkIUlcONf1ZHyq", // User2_123
+    }, {
+        "_id": 8,
+        "userName": "user8",
+        "firstName": "Student 8",
+        "lastName": "Smith",
+        "benefitStartDate": "2025-11-30",
+        "password": "User8_123"
+        //"password" : "$2a$10$Tlx2cNv15M0Aia7wyItjsepeA8Y6PyBYaNdQqvpxkIUlcONf1ZHyq", // User2_123
+    }, {
+        "_id": 9,
+        "userName": "user9",
+        "firstName": "Student 9",
+        "lastName": "Smith",
+        "benefitStartDate": "2025-11-30",
+        "password": "User9_123"
+        //"password" : "$2a$10$Tlx2cNv15M0Aia7wyItjsepeA8Y6PyBYaNdQqvpxkIUlcONf1ZHyq", // User2_123
+    }, {
+        "_id": 10,
+        "userName": "user10",
+        "firstName": "Student 10",
+        "lastName": "Smith",
+        "benefitStartDate": "2025-11-30",
+        "password": "User10_123"
+        //"password" : "$2a$10$Tlx2cNv15M0Aia7wyItjsepeA8Y6PyBYaNdQqvpxkIUlcONf1ZHyq", // User2_123
+    }, {
+        "_id": 11,
+        "userName": "user11",
+        "firstName": "Student 11",
+        "lastName": "Smith",
+        "benefitStartDate": "2025-11-30",
+        "password": "User11_123"
+        //"password" : "$2a$10$Tlx2cNv15M0Aia7wyItjsepeA8Y6PyBYaNdQqvpxkIUlcONf1ZHyq", // User2_123
+    }, {
+        "_id": 12,
+        "userName": "user12",
+        "firstName": "Student 12",
+        "lastName": "Smith",
+        "benefitStartDate": "2025-11-30",
+        "password": "User12_123"
+        //"password" : "$2a$10$Tlx2cNv15M0Aia7wyItjsepeA8Y6PyBYaNdQqvpxkIUlcONf1ZHyq", // User2_123
+    }, {
+        "_id": 13,
+        "userName": "user13",
+        "firstName": "Student 13",
+        "lastName": "Smith",
+        "benefitStartDate": "2025-11-30",
+        "password": "User13_123"
+        //"password" : "$2a$10$Tlx2cNv15M0Aia7wyItjsepeA8Y6PyBYaNdQqvpxkIUlcONf1ZHyq", // User2_123
+    }, {
+        "_id": 14,
+        "userName": "user14",
+        "firstName": "Student 14",
+        "lastName": "Smith",
+        "benefitStartDate": "2025-11-30",
+        "password": "User14_123"
+        //"password" : "$2a$10$Tlx2cNv15M0Aia7wyItjsepeA8Y6PyBYaNdQqvpxkIUlcONf1ZHyq", // User2_123
+    }, {
+        "_id": 15,
+        "userName": "user15",
+        "firstName": "Student 15",
+        "lastName": "Smith",
+        "benefitStartDate": "2025-11-30",
+        "password": "User15_123"
+        //"password" : "$2a$10$Tlx2cNv15M0Aia7wyItjsepeA8Y6PyBYaNdQqvpxkIUlcONf1ZHyq", // User2_123
+    }, {
+        "_id": 16,
+        "userName": "user16",
+        "firstName": "Student 16",
+        "lastName": "Smith",
+        "benefitStartDate": "2025-11-30",
+        "password": "User16_123"
+        //"password" : "$2a$10$Tlx2cNv15M0Aia7wyItjsepeA8Y6PyBYaNdQqvpxkIUlcONf1ZHyq", // User2_123
+    }
+	
+	];
+    
+    const tryDropCollection = (db, name) => {
     return new Promise((resolve, reject) => {
         db.dropCollection(name, (err, data) => {
             if (!err) {
