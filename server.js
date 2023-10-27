@@ -94,7 +94,7 @@ MongoClient.connect(db, (err, db) => {
         // TODO: Add "maxAge"
         cookie: {
             httpOnly: true,
-            sameSite: 'none'
+            sameSite: 'none',
             // Remember to start an HTTPS server to get this working
             // secure: true
         }
