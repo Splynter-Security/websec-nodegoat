@@ -100,13 +100,16 @@ MongoClient.connect(db, (err, db) => {
         }
         */
         cookie: {
-            //sameSite: 'none',
+            sameSite: 'none'
             // Remember to start an HTTPS server to get this working
-            secure: true
+            //secure: true
         }
 
     }));
-
+    if (app.get('env') === 'production') {
+        app.set('trust proxy', 1) // trust first proxy
+        sess.cookie.secure = true // serve secure cookies
+      }
     /*
     // Fix for A8 - CSRF
     // Enable Express csrf protection
