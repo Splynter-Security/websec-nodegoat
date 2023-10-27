@@ -75,7 +75,7 @@ MongoClient.connect(db, (err, db) => {
     }));
 
     // Enable session management using express middleware
-    app.use(session({
+    var sess = {
         // genid: (req) => {
         //    return genuuid() // use UUIDs for session IDs
         //},
@@ -102,14 +102,18 @@ MongoClient.connect(db, (err, db) => {
         cookie: {
             sameSite: 'none'
             // Remember to start an HTTPS server to get this working
-            //secure: true
+            // secure: true
         }
 
-    }));
+    };
+
     if (app.get('env') === 'production') {
         app.set('trust proxy', 1) // trust first proxy
-        session.cookie.secure = true // serve secure cookies
+        sess.cookie.secure = true // serve secure cookies
       }
+      
+      app.use(session(sess))
+
     /*
     // Fix for A8 - CSRF
     // Enable Express csrf protection
