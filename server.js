@@ -108,7 +108,7 @@ MongoClient.connect(db, (err, db) => {
     }));
     if (app.get('env') === 'production') {
         app.set('trust proxy', 1) // trust first proxy
-        sess.cookie.secure = true // serve secure cookies
+        session.cookie.secure = true // serve secure cookies
       }
     /*
     // Fix for A8 - CSRF
