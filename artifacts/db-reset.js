@@ -203,7 +203,7 @@ MongoClient.connect(db, (err, db) =>  {
         // reset unique id counter
         countersCol.insert({
             _id: "userId",
-            seq: 3
+            seq: 18
         }, (err, data) => {
             parseResponse(err, data, "countersCol.insert");
         });
