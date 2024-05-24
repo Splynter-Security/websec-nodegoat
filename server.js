@@ -99,9 +99,9 @@ MongoClient.connect(db, (err, db) => {
             // secure: true
         }
         */
-        // Alternative fix for A8 - CSRF: replace none with 'strict'
+        // Alternative fix for A8 - CSRF: replace none with 'lax'
         cookie: {
-            sameSite: 'strict'
+            sameSite: 'none'
             // Remember to start an HTTPS server to get this working
             // secure: true
         }
